@@ -1,5 +1,6 @@
 import { useState } from "react";
 import W12MHeader from "./W12MHeader";
+import { SpeciesName } from "./species-name";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("");
@@ -20,16 +21,10 @@ const W12MForm = () => {
     <section className="w12MForm">
       <W12MHeader />
       <form>
-        <div>
-          <label htmlFor="speciesNameInput">Species Name</label>
-          <input
-            type="text"
-            name="speciesName"
-            id="speciesNameInput"
-            value={speciesName}
-            onChange={(e) => setSpeciesName(e.target.value)}
-          ></input>
-        </div>
+        <SpeciesName
+          speciesName={speciesName}
+          onChangeSpeciesName={(value) => setSpeciesName(value)}
+        />
 
         <div>
           <label htmlFor="planetNameInput">Planet Name</label>
