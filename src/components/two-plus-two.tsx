@@ -12,7 +12,6 @@ export const TwoPlusTwo: React.FC<TwoPlusTwoProps> = ({
     <select
       name="twoPlusTwo"
       id="twoPlusTwoSelect"
-      defaultValue="notFour"
       onChange={(e) => onChangeTwoPlusTwo(e.target.value)}
     >
       <option value="four">4</option>

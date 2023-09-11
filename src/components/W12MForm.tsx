@@ -10,7 +10,7 @@ const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("");
   const [planetName, setPlanetName] = useState("");
   const [numberOfBeings, setNumberOfBeings] = useState("");
-  const [twoPlusTwo, setTwoPlusTwo] = useState("");
+  const [twoPlusTwo, setTwoPlusTwo] = useState("notFour");
   const [postContent, setPostContent] = useState("");
   function handleSubmit() {
     console.log(
