@@ -1,6 +1,10 @@
 import { useState } from "react";
 import W12MHeader from "./W12MHeader";
 import { SpeciesName } from "./species-name";
+import { PlanetName } from "./planet-name";
+import { NumberOfBeings } from "./number-of-being";
+import { TwoPlusTwo } from "./two-plus-two";
+import { ReasonForSparing } from "./reason-for-sparing";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState("");
@@ -25,52 +29,22 @@ const W12MForm = () => {
           speciesName={speciesName}
           onChangeSpeciesName={(value) => setSpeciesName(value)}
         />
-
-        <div>
-          <label htmlFor="planetNameInput">Planet Name</label>
-          <input
-            type="text"
-            name="planetName"
-            id="planetNameInput"
-            value={planetName}
-            onChange={(e) => setPlanetName(e.target.value)}
-          ></input>
-        </div>
-
-        <div>
-          <label htmlFor="numberOfBeingsInput">Number of beings</label>
-          <input
-            type="text"
-            name="numberOfBeings"
-            id="numberOfBeingsInput"
-            value={numberOfBeings}
-            onChange={(e) => setNumberOfBeings(e.target.value)}
-          ></input>
-        </div>
-
-        <div>
-          <label htmlFor="twoPlusTwoSelect">What is 2+2?</label>
-          <select
-            name="twoPlusTwo"
-            id="twoPlusTwoSelect"
-            defaultValue="notFour"
-            onChange={(e) => setTwoPlusTwo(e.target.value)}
-          >
-            <option value="four">4</option>
-            <option value="notFour">Not 4</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="reasonForSparing">Reason for sparing</label>
-          <textarea
-            name="reasonForSparing"
-            id="reasonForSparing"
-            rows={4}
-            cols={50}
-            onChange={(e) => setPostContent(e.target.value)}
-          ></textarea>
-        </div>
+        <PlanetName
+          planetName={planetName}
+          onChangePlanetName={(value) => setPlanetName(value)}
+        />
+        <NumberOfBeings
+          numberOfBeings={numberOfBeings}
+          onChangeNumberOfBeings={(value) => setNumberOfBeings(value)}
+        />
+        <TwoPlusTwo
+          twoPlusTwo={twoPlusTwo}
+          onChangeTwoPlusTwo={(value) => setTwoPlusTwo(value)}
+        />
+        <ReasonForSparing
+          reasonForSparing="{postContent}"
+          onChangeReasonForSparing={(value) => setPostContent(value)}
+        />
 
         <button type="button" onClick={handleSubmit}>
           Submit form
